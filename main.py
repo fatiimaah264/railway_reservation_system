@@ -16,3 +16,14 @@ def book_ticket():
             next_booking_id += 1
             return
     print("No seats available")
+
+def cancel_ticket():
+    try:
+        booking_id = int(input("Booking ID: "))
+        if booking_id in seats:
+            del seats[booking_id]
+            print("Ticket cancelled")
+        else:
+            print("Booking ID not found")
+    except:
+        print("Invalid input")
